@@ -1,0 +1,6 @@
+--Year with the highest profit--
+SELECT years, SUM(profit) AS profit_sum
+FROM int_brew
+GROUP BY years
+ORDER BY 2 DESC;
+

@@ -1,0 +1,6 @@
+--highest sold brands in Nigeria in 2019--
+SELECT brands, countries, SUM(quantity)
+FROM int_brew
+WHERE years = '2019' AND countries = 'Nigeria'
+GROUP BY 1,2
+ORDER BY 3 DESC;

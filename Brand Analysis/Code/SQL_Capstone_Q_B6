@@ -1,0 +1,9 @@
+/*favourites brand in south south
+region in Nigeria*/
+SELECT brands, region, countries, 
+SUM(quantity) AS quantity_consumed
+FROM int_brew
+ WHERE countries = 'Nigeria'
+GROUP BY 1,2,3
+HAVING region = 'southsouth'
+ORDER BY 4 DESC;

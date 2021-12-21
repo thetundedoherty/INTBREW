@@ -1,0 +1,9 @@
+/*month in last 3 years 
+with least profit generated*/
+SELECT months, years, SUM(profit)profit_sum
+FROM int_brew
+GROUP BY (1,2)
+ORDER BY 3;
+
+			
+

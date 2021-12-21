@@ -1,0 +1,7 @@
+/*brand with the highest
+profit in Senegal*/
+SELECT brands, countries, SUM(profit) profit_sum
+FROM int_brew
+GROUP BY (1,2)
+HAVING countries ='Senegal'
+ORDER BY 3 DESC;

@@ -1,0 +1,9 @@
+/*budweiser consumption in all
+regions in Nigeria in 2019*/
+SELECT brands, region, countries, years, 
+SUM(quantity) AS budweiser_consumption
+FROM int_brew
+WHERE countries = 'Nigeria' AND years = '2019'
+GROUP BY 1,2,3,4
+HAVING brands = 'budweiser'
+ORDER BY 5 DESC;

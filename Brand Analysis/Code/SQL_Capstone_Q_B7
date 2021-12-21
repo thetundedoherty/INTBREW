@@ -1,0 +1,15 @@
+--beer consumption in Nigeria--
+SELECT t1.countries, SUM(quantity_sum) AS beer_consumption
+FROM
+(SELECT brands, countries, SUM(quantity) AS quantity_sum
+FROM int_brew 
+WHERE brands != 'beta malt' AND brands != 'grand malt'
+GROUP BY 1,2
+HAVING countries ='Nigeria'
+ORDER BY 3 DESC) t1
+GROUP BY 1;
+
+
+
+
+

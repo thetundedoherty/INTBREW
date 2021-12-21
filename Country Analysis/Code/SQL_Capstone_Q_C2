@@ -1,0 +1,6 @@
+--highest sales personnel of budweiser in senegal--
+SELECT  DISTINCT sales_rep,  emails, SUM(quantity) AS quantity_sold
+FROM int_brew
+WHERE countries = 'Senegal' AND brands = 'budweiser'
+GROUP BY 1,2
+ORDER BY 3 DESC;

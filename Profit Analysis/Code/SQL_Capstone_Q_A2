@@ -1,0 +1,10 @@
+--Profit worth of breweries group by territories--
+SELECT CASE 
+WHEN countries = 'Nigeria' THEN 'Anglophone'
+WHEN countries = 'Ghana' THEN 'Anglophone'
+ELSE 'Francophone' END AS territories, SUM(profit) AS profit_sum
+FROM int_brew
+GROUP BY 1
+ORDER BY 2 DESC;
+
+

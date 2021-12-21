@@ -1,0 +1,13 @@
+/*country with highest profit
+in year 2019*/
+SELECT countries, SUM(profit), years
+FROM int_brew
+GROUP BY (1,3)
+HAVING years = '2019'
+ORDER BY 2 DESC; 
+
+
+ 
+ 
+
+

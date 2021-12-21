@@ -1,0 +1,12 @@
+/*profit of the breweries
+in the last 3 years in all countries*/
+SELECT SUM(profit_sum_territories) profit_sum
+FROM
+	(SELECT CASE
+	WHEN countries = 'Nigeria' OR COUNTRIES ='Ghana'
+	THEN 'Anglophone'ELSE 'Francophone'END AS territories,
+	SUM(profit) profit_sum_territories
+	FROM int_brew
+	WHERE years BETWEEN '2017' AND '2019'
+	GROUP BY 1
+	ORDER BY 2 DESC)t1;

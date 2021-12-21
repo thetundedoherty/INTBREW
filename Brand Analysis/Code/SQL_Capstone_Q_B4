@@ -1,0 +1,8 @@
+/*favourite malt brand consumed in Anglophone 
+territories between 2018 and 2019*/
+SELECT brands,SUM(quantity) malt_consumed
+FROM int_brew
+WHERE countries ='Nigeria' OR countries ='Ghana' AND years BETWEEN '2018' AND '2019'
+GROUP BY 1
+HAVING brands = 'beta malt' OR brands = 'grand malt' 
+ORDER BY 2 DESC;
