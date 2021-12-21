@@ -1,16 +1,12 @@
 /*country with the highest profit
 of the fourth quarter in 2019*/
-SELECT countries, SUM(profit_sum)AS profit_sum
-FROM
-	(SELECT countries, months,  SUM(profit) AS profit_sum
-	FROM int_brew
-	WHERE months ='October' OR months = 'November' OR  months = 'December'
-	AND years = '2019'
-	GROUP BY 1,2
-	ORDER BY 3 DESC)t1
-GROUP BY 1
-ORDER BY 2 DESC
-LIMIT 1;
+SELECT countries, years, SUM(profit) profit_sum
+FROM int_brew
+WHERE months = 'October' OR months = 'November' 
+OR months = 'December'
+GROUP BY 1,2
+HAVING years = 2019
+ORDER BY 3 DESC;
 	
 
 	

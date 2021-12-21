@@ -3,5 +3,4 @@ SELECT brands, countries, SUM(quantity) quantity_consumed
 FROM int_brew
 GROUP BY (1,2)
 HAVING countries = 'Ghana'
-ORDER BY 3 DESC
-LIMIT 2;
+ORDER BY 3 DESC;

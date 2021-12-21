@@ -2,5 +2,5 @@
 SELECT MIN(profit) min_profit, years, months
 FROM int_brew
 WHERE months = 'December' AND years ='2018'
-GROUP BY (2,3);
+GROUP BY 2,3;
 

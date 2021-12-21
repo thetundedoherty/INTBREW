@@ -4,7 +4,7 @@ SELECT t1.months, SUM(t1.profit_percent) profit_percent, t1.years
 FROM
 	(SELECT months, (100.0*profit/SUM(profit)OVER())  profit_percent, years
 	FROM int_brew 
-	WHERE years ='2019' AND months BETWEEN 'January' AND 'November'
+	WHERE years ='2019'
 	GROUP BY 1, profit, 3
 	ORDER BY 1) t1
 GROUP BY 1,3

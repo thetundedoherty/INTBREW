@@ -1,8 +1,13 @@
 /*top 3 brands in francophone 
 countries in the last 2 years*/
-SELECT  brands, SUM(quantity) quantity_consumed_in_fracophone
-FROM int_brew
-WHERE years BETWEEN '2018' AND '2019' AND countries = 'Senegal' OR countries = 'Togo' OR countries = 'Benin'
+SELECT t1.brands, SUM(t1.quantity_consumed) AS qty_consumed
+FROM
+	(SELECT brands, countries, years, SUM(quantity) AS quantity_consumed
+	FROM int_brew
+	WHERE countries != 'Nigeria' AND  countries != 'Ghana'
+	GROUP BY 1, 2, 3
+	HAVING years !=  2017
+	ORDER BY 4 DESC)t1
 GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 3;
